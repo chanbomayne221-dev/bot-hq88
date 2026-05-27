@@ -1,0 +1,25 @@
+{
+  "name": "hq88-telegram-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "backup": "bash scripts/backup-db.sh",
+    "postinstall": "npm rebuild better-sqlite3 || true"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/node-telegram-bot-api": "^0.64.7",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}
